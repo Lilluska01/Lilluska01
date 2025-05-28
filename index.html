@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bemutatkozó Oldal</title>
+  <style>
+    html, body { margin:0; padding:0; height:100%; overflow-x:hidden; overflow-y:auto; background:linear-gradient(135deg,#000,#111,#000); color:#eee; font-family:Arial,sans-serif; }
+    #starCanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; }
+    #content { position:relative; z-index:1; padding:20px; text-align:center; }
+    #content img { width:150px; border-radius:50%; margin-bottom:10px; animation:glow 2s infinite ease-in-out; }
+    @keyframes glow { 0%,100%{box-shadow:0 0 10px #8B0000,0 0 20px #8B0000;}50%{box-shadow:0 0 30px #8B0000,0 0 40px #8B0000;} }
+    nav { margin:10px 0; display: flex; justify-content: center; }
+    nav a { text-decoration:none; margin:0 8px; padding:6px 12px; background:rgba(200,200,200,0.2); color:#fff; border-radius:4px; transition:background 0.2s; }
+    nav a.active, nav a:hover { background:rgba(200,200,200,0.4); }
+    section { display:none; padding:20px 0; min-height:calc(100vh - 160px); }
+    section.active { display:block; }
+    .info-box { border:2px solid #8B0000; background:rgba(0,0,0,0.5); border-radius:6px; padding:15px; max-width:600px; margin:10px auto; text-align:left; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:15px; }
+    .grid-item { border:2px solid #8B0000; background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; }
+    .lang-switch { position:fixed; bottom:20px; right:20px; display:flex; gap:6px; }
+    .lang-switch span { cursor:pointer; opacity:0.7; } .lang-switch span.active{opacity:1; font-weight:bold; }
+    .lang { display:none; }
+  </style>
+</head>
+<body>
+  <canvas id="starCanvas"></canvas>
+  <div id="content">
+    <img src="en.png" alt="Logo">
+    <p><strong style="font-size:45px; font-family:'Brush Script MT', cursive; display:block; margin:10px 0;">Lilluska01</strong></p>
+    <p class="lang hu">Üdvözöllek az oldalamon! Itt megtalálsz néhány információt rólam, a PC konfigurációmat és más érdekességeket.</p>
+    <p class="lang en">Welcome to my page! Here you can find some information about me, my PC configuration, and more content.</p>
+    <nav>
+      <a href="#home" class="active"><span class="lang hu">Kezdőlap</span><span class="lang en">Home</span></a>
+      <a href="#schools"><span class="lang hu">Iskolák</span><span class="lang en">Schools</span></a>
+      <a href="#pc"><span class="lang hu">PC Beállítás</span><span class="lang en">PC Setup</span></a>
+    </nav>
+    <section id="home" class="active">
+      <h1 class="lang hu">Rólam</h1>
+      <h1 class="lang en">About Me</h1>
+      <div class="info-box lang hu">
+        <strong>Játékok, amikkel a legtöbbet játszok:</strong>
+        <p><li>CounterStrike 2<li>Valorant<li>Rainbow Six Siege</p>
+        <p><strong>Mostanában felkapott játékom:</strong> Minecraft</p>
+      </div>
+      <div class="info-box lang en">
+        <strong>Games I play the most:</strong>
+        <p><li>CounterStrike 2<li>Valorant<li>Rainbow Six Siege</p>
+        <p><strong>Most recent game:</strong> R.E.P.O</p>
+      </div>
+    </section>
+    <section id="schools">
+      <h1 class="lang hu">Iskoláim</h1>
+      <h1 class="lang en">Schools Attended</h1>
+      <div class="grid" style="grid-template-columns:1fr;">
+        <div class="grid-item"><span class="lang hu">Százhalombattai Arany János Általános Iskola és Gimnázium - Matek-Infó (2018–2022)</span><span class="lang en">Arany János Elementary & High School, Százhalombatta - Math-IT (2018–2022)</span></div>
+        <div class="grid-item"><span class="lang hu">Dunaújvárosi Egyetem - Mérnökinformatika (2023–)</span><span class="lang en">University of Dunaújváros - Computer Science Engineering (2023–)</span></div>
+      </div>
+    </section>
+    <section id="pc">
+      <h1 class="lang hu">PC Konfigurációm</h1>
+      <h1 class="lang en">My PC Setup</h1>
+      <div class="category">
+        <h2 class="lang hu">Alap Hardver</h2>
+        <h2 class="lang en">Core Hardware</h2>
+        <div class="grid">
+          <div class="grid-item"><span class="lang hu">Processzor: AMD Ryzen 7 5700X3D 3.0GHz</span><span class="lang en">CPU: AMD Ryzen 7 5700X3D 3.0GHz</span></div>
+          <div class="grid-item"><span class="lang hu">Videókártya: GIGABYTE GeForce RTX 3060 GAMING OC 12G</span><span class="lang en">Graphics Card: GIGABYTE GeForce RTX 3060 GAMING OC 12G</span></div>
+          <div class="grid-item"><span class="lang hu">RAM: Kingston FURY 32GB KIT DDR4 3200MHz</span><span class="lang en">RAM: Kingston FURY 32GB KIT DDR4 3200MHz</span></div>
+          <div class="grid-item"><span class="lang hu">Alaplap: GIGABYTE B450M DS3H (rev. 1.x)</span><span class="lang en">Motherboard: GIGABYTE B450M DS3H (rev. 1.x)</span></div>
+          <div class="grid-item"><span class="lang hu">HDD: Seagate 2TB BarraCuda</span><span class="lang en">HDD: Seagate 2TB BarraCuda</span></div>
+          <div class="grid-item"><span class="lang hu">SSD: Samsung 990 EVO 1TB M.2</span><span class="lang en">SSD: Samsung 990 EVO 1TB M.2</span></div>
+          <div class="grid-item"><span class="lang hu">Tápegység: Chieftec Photon Gold GDP-750C-RGB 750W</span><span class="lang en">Power Supply: Chieftec Photon Gold GDP-750C-RGB 750W</span></div>
+          <div class="grid-item"><span class="lang hu">Gépház: Kolink Observatory RGB</span><span class="lang en">Case: Kolink Observatory RGB</span></div>
+        </div>
+      </div>
+      <div class="category">
+        <h2 class="lang hu">Perifériák</h2>
+        <h2 class="lang en">Peripherals</h2>
+        <div class="grid">
+          <div class="grid-item"><span class="lang hu">Egér: Logitech G502 HERO</span><span class="lang en">Mouse: Logitech G502 HERO</span></div>
+          <div class="grid-item"><span class="lang hu">Egérpad: SteelSeries QcK EDGE</span><span class="lang en">Mousepad: SteelSeries QcK EDGE</span></div>
+          <div class="grid-item"><span class="lang hu">Billentyűzet: ASUS TUF Gaming K3</span><span class="lang en">Keyboard: ASUS TUF Gaming K3</span></div>
+          <div class="grid-item"><span class="lang hu">Fejhallgató: SteelSeries Arctis 7+</span><span class="lang en">Headset: SteelSeries Arctis 7+</span></div>
+          <div class="grid-item"><span class="lang hu">Mikrofon: Auna Mic 900B LED</span><span class="lang en">Microphone: Auna Mic 900B LED</span></div>
+          <div class="grid-item"><span class="lang hu">Webkamera: Logitech C922 Pro HD Stream</span><span class="lang en">Webcam: Logitech C922 Pro HD Stream</span></div>
+          <div class="grid-item"><span class="lang hu">Szék: Extreme Zero Series Gaming Chair</span><span class="lang en">Chair: Extreme Zero Series Gaming Chair</span></div>
+        </div>
+      </div>
+      <div class="category">
+        <h2 class="lang hu">Monitorok</h2>
+        <h2 class="lang en">Monitors</h2>
+        <div class="grid">
+          <div class="grid-item"><span class="lang hu">AOC C24G1 24'' 144Hz</span><span class="lang en">AOC C24G1 24'' 144Hz</span></div>
+          <div class="grid-item"><span class="lang hu">AOC C24G1 24'' 144Hz</span><span class="lang en">AOC C24G1 24'' 144Hz</span></div>
+          <div class="grid-item"><span class="lang hu">LG M2762DP 27'' Full HD LCD 60Hz</span><span class="lang en">LG M2762DP 27'' Full HD LCD 60Hz</span></div>
+        </div>
+      </div>
+    </section>
+    <div class="lang-switch">
+      <span id="select-hu" class="active">HU</span> / <span id="select-en">EN</span>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{
+      e.preventDefault(); document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+      a.classList.add('active'); document.getElementById(a.getAttribute('href').substring(1)).classList.add('active');
+    }));
+
+    const btnHu=document.getElementById('select-hu'),btnEn=document.getElementById('select-en');
+    function switchLang(l){ document.documentElement.lang=l; document.querySelectorAll('.lang').forEach(el=>el.style.display=el.classList.contains(l)?'block':'none'); btnHu.classList.toggle('active',l==='hu'); btnEn.classList.toggle('active',l==='en'); }
+    btnHu.onclick=()=>switchLang('hu'); btnEn.onclick=()=>switchLang('en'); switchLang('hu');
+    const c=document.getElementById('starCanvas'),ctx=c.getContext('2d');let W,H,stars; function init(){W=c.width=innerWidth;H=c.height=innerHeight;stars=Array.from({length:150},()=>({x:Math.random()*W,y:Math.random()*H,z:Math.random()*W}));} window.onresize=init;init();(function f(){ctx.clearRect(0,0,W,H);stars.forEach(s=>{s.z-=2;if(s.z<=0)s.z=W;const px=(s.x-W/2)*(W/s.z)+W/2,py=(s.y-H/2)*(W/s.z)+H/2,r=(W/s.z)*1.2;ctx.beginPath();ctx.arc(px,py,r,0,2*Math.PI);ctx.fillStyle='rgba(255,255,255,0.8)';ctx.fill();});requestAnimationFrame(f);})();
+  </script>
+</body>
+</html>
